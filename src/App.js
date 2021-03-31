@@ -9,7 +9,7 @@ function App() {
       setKeys([...keys, event.key]);
     };
     window.addEventListener("keydown", handleKeyDown);
-  }, []);
+  }, [keys]);
 
   return (
     <div className="App">
