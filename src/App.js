@@ -1,13 +1,16 @@
 import "./App.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function App() {
   const [keys, setKeys] = useState([]);
-  const handleKeyDown = (event) => {
-    console.log(event);
-    setKeys([...keys, event.key]);
-  };
-  window.addEventListener("keydown", handleKeyDown);
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      console.log(event);
+      setKeys([...keys, event.key]);
+    };
+    window.addEventListener("keydown", handleKeyDown);
+  }, []);
+
   return (
     <div className="App">
       <ul>
