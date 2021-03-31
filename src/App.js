@@ -9,6 +9,7 @@ function App() {
       setKeys([...keys, event.key]);
     };
     window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
   }, [keys]);
 
   return (
